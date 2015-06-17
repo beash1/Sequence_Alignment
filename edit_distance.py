@@ -30,7 +30,7 @@ class Editdistance(object):
         for i in range(1,n+1):
             for j in range(1,m+1):
                 d[i,j]=min(d[i-1,j-1] + MATCH(s[i-1],t[j-1],match,mismatch),d[i-1,j] + GAP(1,0,1),d[i,j-1] + GAP(1,0,1))
-        print d[i,j]        
+        print d[n,m]        
 
     
 
