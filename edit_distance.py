@@ -1,5 +1,13 @@
 class Editdistance(object):
 
+	#두 서열의 Edit distance 테이블
+	def PRINTF(n,m,d):
+    for i in range(n+1):
+        row=[]
+        for j in range(m+1):
+            row.append(d[i,j])
+        print row
+
     #두 서열에서 각 nuclotide가 같은지 확인
     def MATCH(a,b,match,mismatch):
         if (a==b):
@@ -30,7 +38,8 @@ class Editdistance(object):
         for i in range(1,n+1):
             for j in range(1,m+1):
                 d[i,j]=min(d[i-1,j-1] + MATCH(s[i-1],t[j-1],match,mismatch),d[i-1,j] + GAP(1,0,1),d[i,j-1] + GAP(1,0,1))
-        print d[n,m]        
-
+	
+	PRINTF (n,m,d)
+	print "edit distance =", d[n,m]
     
 
